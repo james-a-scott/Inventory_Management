@@ -1,0 +1,25 @@
+<!-- Container for Delete Item Confirmation (Bootstrap column layout) -->
+<div class="col-md-4">
+
+  <!-- Section Title -->
+  <h2 class="text-center">Delete Item</h2>
+
+  <!-- Conditional Display: Show only if 'item' object is available -->
+  <div *ngIf="item">
+
+    <!-- Confirmation Prompt -->
+    <p>Are you sure you want to delete the following item?</p>
+
+    <!-- Item Details Preview -->
+    <p><strong>Code:</strong> {{ item.code }}</p>
+    <p><strong>Name:</strong> {{ item.name }}</p>
+    <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+
+    <!-- Delete Button: Triggers item deletion logic -->
+    <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+
+    <!-- Cancel Button: Aborts deletion and returns to previous state -->
+    <button class="btn btn-secondary" (click)="cancelDelete()">Cancel</button>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+[
+    {
+        "code" : "1",
+        "name" : "Plate",
+        "quantity" : 100 
+                
+    },  {
+        "code" : "2",
+        "name" : "Cup",
+        "quantity" : 100
+    },  {
+        "code" : "3",
+        "name" : "Napkin",
+        "quantity" : 200
+
+        }
+]

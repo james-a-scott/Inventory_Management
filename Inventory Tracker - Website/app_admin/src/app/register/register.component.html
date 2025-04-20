@@ -1,0 +1,81 @@
+<!-- Registration Form -->
+<div class="row">
+  <div class="col-12 col-md-8">
+    <h2>Register</h2>
+
+    <!-- Form starts here -->
+    <form (ngSubmit)="onRegisterSubmit()" #form="ngForm" novalidate>
+
+      <!-- Error Message (Displays if there's a form error) -->
+      <div role="alert" *ngIf="formError" class="alert alert-danger">
+        {{ formError }}
+      </div>
+
+      <!-- Name Input (For user’s name) -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text"
+               id="name"
+               name="name"
+               placeholder="Enter Name"
+               class="form-control"
+               [(ngModel)]="credentials.name"
+               required autocomplete="current-name" />
+      </div>
+
+      <!-- Email Input (For user’s email address) -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email"
+               id="email"
+               name="email"
+               placeholder="Enter email address"
+               class="form-control"
+               [(ngModel)]="credentials.email"
+               required autocomplete="current-email" />
+      </div>
+
+      <!-- Role Select (Allows user to choose a role) -->
+      <div class="form-group">
+        <label for="role">Role</label>
+        <select id="role"
+                name="role"
+                class="form-control"
+                [(ngModel)]="credentials.role"
+                required>
+          <!-- Disabled option as placeholder -->
+          <option value="" disabled selected>Select a role</option>
+          <option value="Admin">Admin</option>
+          <option value="SuperUser">SuperUser</option>
+          <option value="User">User</option>
+        </select>
+      </div>
+
+      <!-- Password Input (For user’s password) -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password"
+               id="password"
+               name="password"
+               placeholder="e.g. 12+ alphanumerics"
+               class="form-control"
+               [(ngModel)]="credentials.password"
+               required autocomplete="current-password" />
+      </div>
+
+      <!-- Buttons Container (For navigation and form submission) -->
+      <div class="d-flex justify-content-between mt-3">
+
+        <!-- Back Button (Allows user to go back to the previous page) -->
+        <a (click)="goBack()" class="btn btn-secondary">
+          Back
+        </a>
+
+        <!-- Register Button (Submits the registration form) -->
+        <button type="submit" role="button" class="btn btn-primary">
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

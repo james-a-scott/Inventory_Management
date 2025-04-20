@@ -1,0 +1,73 @@
+<!-- Container for Add Item Form (uses Bootstrap grid system for responsive layout) -->
+<div class="col-md-4">
+
+  <!-- Title -->
+  <h2 class="text-center">Add Item</h2>
+
+  <!-- Reactive Form Initialization and Submission Handler -->
+  <form *ngIf="addForm" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <!-- Code Input Field -->
+    <div class="form-group">
+      <label>Code:</label>
+      <!-- Input bound to 'code' FormControl, with dynamic validation class -->
+      <input type="text" formControlName="code" placeholder="Code"
+             class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f['code'].errors }">
+
+      <!-- Validation Feedback for Code -->
+      <div *ngIf="submitted && f['code'].errors">
+        <div *ngIf="f['code'].errors?.['required']">
+          Item Code is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Name Input Field -->
+    <div class="form-group">
+      <label>Name:</label>
+      <!-- Input bound to 'name' FormControl, with validation indicator -->
+      <input type="text" formControlName="name" placeholder="Name"
+             class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+
+      <!-- Validation Feedback for Name -->
+      <div *ngIf="submitted && f['name'].errors">
+        <div *ngIf="f['name'].errors?.['required']">
+          Name is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Quantity Input Field -->
+    <div class="form-group">
+      <label>Description:</label>
+      <!-- Input bound to 'quantity' FormControl, with validation check -->
+      <input type="text" formControlName="quantity" placeholder="Quantity"
+             class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f['quantity'].errors }">
+
+      <!-- Validation Feedback for Quantity -->
+      <div *ngIf="submitted && f['quantity'].errors">
+        <div *ngIf="f['quantity'].errors?.['required']">
+          Quantity is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Action Buttons -->
+    <div class="d-flex justify-content-between mt-3">
+
+      <!-- Back Button - navigates to previous view -->
+      <a (click)="goBack()" class="btn btn-secondary">
+        Back
+      </a>
+
+      <!-- Save Button - triggers form submission -->
+      <button type="submit" class="btn btn-info">
+        Save
+      </button>
+    </div>
+
+  </form>
+</div>

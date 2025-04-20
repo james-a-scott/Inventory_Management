@@ -1,0 +1,74 @@
+<!-- Container for Edit Trip Form (uses Bootstrap grid layout for responsive design) -->
+<div class="col-md-4">
+
+  <!-- Section Title -->
+  <h2 class="text-center">Edit Item</h2>
+
+  <!-- Reactive Form Binding: Only shows if 'editForm' is initialized -->
+  <form *ngIf="editForm" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+    <!-- Trip Code Input Field -->
+    <div class="form-group">
+      <label>Code:</label>
+      <!-- Binds input to 'code' form control and applies validation class dynamically -->
+      <input type="text" formControlName="code" placeholder="Code"
+             class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f['code'].errors }">
+
+      <!-- Validation Message for Code Field -->
+      <div *ngIf="submitted && f['code'].errors">
+        <div *ngIf="f['code'].errors?.['required']">
+          Trip Code is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Trip Name Input Field -->
+    <div class="form-group">
+      <label>Name:</label>
+      <!-- Binds input to 'name' form control and handles error highlighting -->
+      <input type="text" formControlName="name" placeholder="Name"
+             class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+
+      <!-- Validation Message for Name Field -->
+      <div *ngIf="submitted && f['name'].errors">
+        <div *ngIf="f['name'].errors?.['required']">
+          Name is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Quantity Input Field -->
+    <div class="form-group">
+      <label>Quantity:</label>
+      <!-- Binds input to 'quantity' form control and adds dynamic validation styles -->
+      <input type="text" formControlName="quantity" placeholder="Quantity"
+             class="form-control"
+             [ngClass]="{ 'is-invalid': submitted && f['quantity'].errors }">
+
+      <!-- Validation Message for Quantity Field -->
+      <div *ngIf="submitted && f['quantity'].errors">
+        <div *ngIf="f['quantity'].errors?.['required']">
+          Quantity is required
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="d-flex justify-content-between mt-3">
+
+      <!-- Back Button: Calls goBack() to navigate to previous view -->
+      <a (click)="goBack()" class="btn btn-secondary">
+        Back
+      </a>
+
+      <!-- Save Button: Submits form and calls onSubmit() -->
+      <button type="submit" class="btn btn-info">
+        Save
+      </button>
+
+    </div>
+
+  </form>
+</div>

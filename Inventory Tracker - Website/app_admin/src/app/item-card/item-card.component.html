@@ -1,0 +1,29 @@
+<!-- Bootstrap Card Component to Display Item Details -->
+<div class="card">
+
+  <!-- Card Header: Displays the item name -->
+  <div class="card-header">{{ item.name }}</div>
+
+  <!-- Card Body: Contains item description and conditional action buttons -->
+  <div class="card-body">
+
+    <!-- Item Description: Binds HTML content safely using [innerHTML] -->
+    <p class="card-text" [innerHTML]="item.description">
+    </p>
+
+    <!-- Action Buttons: Visible only if the user is authenticated -->
+    <div *ngIf="isLoggedIn()">
+
+      <!-- Edit Button: Calls editItem() method with current item as argument -->
+      <button (click)="editItem(item)" class="btn btn-info">Edit Item</button>
+
+      <!-- Visual Separator Between Buttons -->
+      <div class="mx-2" style="width: 1px; background-color: #ccc; height: 24px;"></div>
+
+      <!-- Delete Button: Calls deleteItem() method with current item as argument -->
+      <button (click)="deleteItem(item)" class="btn btn-danger">Delete Item</button>
+
+    </div>
+
+  </div>
+</div>

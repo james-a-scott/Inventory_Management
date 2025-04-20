@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddItemActivity">
+
+    <EditText
+        android:id="@+id/addItemName"
+        android:layout_width="332dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints="name"
+        android:ems="10"
+        android:hint="@string/item_name_hint"
+        android:inputType="text|textCapWords"
+        android:nextFocusDown="@id/addQuantity_add"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/addItemCode"
+        android:layout_width="332dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints="code"
+        android:ems="10"
+        android:hint="@string/item_code"
+        android:inputType="text|textCapWords"
+        android:nextFocusDown="@id/addItemName"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/saveItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/success"
+        android:contentDescription="@string/save_item_desc"
+        android:nextFocusUp="@id/editQuantity_edit"
+        android:onClick="handleSaveItem"
+        android:text="@string/save_item"
+        android:textColor="@android:color/black"
+        app:backgroundTint="@color/success"
+        app:layout_constraintEnd_toEndOf="@+id/increaseQuantityBtn_add"
+        app:layout_constraintTop_toBottomOf="@+id/increaseQuantityBtn_add" />
+
+    <ImageButton
+        android:id="@+id/increaseQuantityBtn_add"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/purple_500"
+        android:contentDescription="@string/increase_quantity_desc"
+        android:onClick="incrementQuantity"
+        android:src="@drawable/ic_add"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/addQuantity_add"
+        app:layout_constraintTop_toTopOf="@+id/decreaseQuantityBtn_add"
+        app:tint="@color/white"
+        tools:src="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/quantity"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addItemName" />
+
+    <ImageButton
+        android:id="@+id/decreaseQuantityBtn_add"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/purple_500"
+        android:contentDescription="@string/decrease_quantity_desc"
+        android:onClick="decrementQuantity"
+        android:src="@drawable/ic_remove"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/addItemName"
+        app:tint="@color/white"
+        tools:src="@drawable/ic_remove" />
+
+    <EditText
+        android:id="@+id/addQuantity_add"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="quantity"
+        android:ems="10"
+        android:hint="@string/quantity_hint"
+        android:inputType="numberSigned"
+        android:nextFocusUp="@id/addItemName"
+        android:nextFocusDown="@id/saveItem"
+        app:layout_constraintStart_toEndOf="@+id/decreaseQuantityBtn_add"
+        app:layout_constraintTop_toTopOf="@+id/decreaseQuantityBtn_add" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

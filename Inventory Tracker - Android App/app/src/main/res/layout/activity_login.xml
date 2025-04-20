@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityLogin">
+
+    <TextView
+        android:id="@+id/appNameHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/app_name_presentation"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textNoSuggestions|text"
+        android:autofillHints="emailAddress"
+    android:padding="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/appNameHeader" />
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/password_text"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+    android:padding="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/usernameInput" />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="36dp"
+        android:onClick="login"
+        android:text="@string/login_btn_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInput"
+        tools:ignore="OnClick" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
