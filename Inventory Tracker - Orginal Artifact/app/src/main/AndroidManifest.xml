@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Feature requirement for telephony, optional for app -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <!-- Permission to send SMS messages -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.InventoryApp">
+
+    <!-- Activity for handling SMS notifications -->
+    <activity
+        android:name=".SmsNotificationsActivity"
+        android:parentActivityName=".InventoryListActivity" />
+
+    <!-- Activity for editing items in the inventory -->
+    <activity
+        android:name=".EditItemActivity"
+        android:parentActivityName=".InventoryListActivity" />
+
+    <!-- Main activity displaying the inventory list -->
+    <activity android:name=".InventoryListActivity" />
+
+    <!-- Entry point activity for the application -->
+    <activity android:name=".LoginActivity"
+        android:exported="true">                          <!-- Exported to allow external access -->
+        <intent-filter>
+            <!-- Main action indicating this is the entry point -->
+            <action android:name="android.intent.action.MAIN" />
+            <!-- Category indicating this activity is the launcher -->
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+</application>
+
+    </manifest>
