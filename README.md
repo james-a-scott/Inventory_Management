@@ -42,9 +42,9 @@ Over time, the project evolved significantly to demonstrate growth in three majo
 - Enabled the mobile app to interact with the web APIs for unified data access
 
 ### 📁 Enhanced Artifact Structure
- Located in: `Inventory_Management/Inventory Tracker - Android App/`
- Located in: `Inventory_Management/Inventory Tracker - Website/`
- Located in: `Inventory_Management/Inventory Tracker - MongoDB/`
+- Located in: `Inventory_Management/Inventory Tracker - Android App/`
+- Located in: `Inventory_Management/Inventory Tracker - Website/`
+- Located in: `Inventory_Management/Inventory Tracker - MongoDB/`
 
 ---
 
