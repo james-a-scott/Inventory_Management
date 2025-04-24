@@ -52,7 +52,7 @@ Over time, the project evolved significantly to demonstrate growth in three majo
 
 To provide deeper insight into the enhancements and decision-making process, the project includes:
 
-- **Code Review (Video Walkthrough)**: [YouTube.com/site/](https://youtube.com/site/)  
+- **Code Review (Video Walkthrough)**: https://youtu.be/7Y-CyiucbLE  
 - **Narratives and Explanations**:  
   Located in: `Inventory_Management/Narratives/`
 
